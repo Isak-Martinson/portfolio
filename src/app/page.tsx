@@ -1,95 +1,74 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+import { useRef } from 'react';
+import { useEffect, useState } from 'react';
+import WritingAnimation from './components/WritingAnimation';
+import CanvasComponent from './components/CanvasComponent';
+import ClearButton from './components/ClearButton';
+import './page.css';
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showSvg, setShowSVG] = useState(true);
+  const [clearCanvas, setClearCanvas] = useState(false);
+  const [animationEnd, setAnimationEnd] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(false);
+    console.log('finnished loading');
+  }, []);
+
+  const handleClearCanvas = () => {
+    console.log('Clear button clicked');
+    setClearCanvas(true);
+    setShowSVG(false);
+  };
+
+  const handleCanvasCleared = () => {
+    setClearCanvas(false);
+    setShowSVG(false);
+    console.log('canvas cleared in canvas component');
+  };
+
+  const handleAnimationLoaded = () => {
+    setAnimationEnd(true);
+    console.log('animation has ended');
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+    <main>
+      <section className='header-section'>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
+          <h1>Isak Martinson</h1>
+          <hr />
           <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            Developer & <br />
+            Digital Designer
           </p>
-        </a>
-      </div>
+        </div>
+        {animationEnd ? <ClearButton onClick={handleClearCanvas} /> : null}
+      </section>
+
+      {!isLoading && showSvg ? (
+        <WritingAnimation onLoad={handleAnimationLoaded} />
+      ) : null}
+
+      <section className='case-section'>
+        <ul>
+          <li>Case 1</li>
+          <li>Case 2</li>
+          <li>Case 3</li>
+        </ul>
+
+        <ul>
+          <li>Github</li>
+          <li>Instagram</li>
+          <li>Mail</li>
+        </ul>
+      </section>
+      <CanvasComponent
+        clear={clearCanvas}
+        onCanvasCleared={handleCanvasCleared}
+      />
     </main>
-  )
+  );
 }

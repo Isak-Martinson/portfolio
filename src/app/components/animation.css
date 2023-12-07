@@ -1,0 +1,31 @@
+svg {
+    width:100%;
+}
+
+.who-cares .mask {
+    fill: none;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+  }
+  
+  @keyframes strokeOffset {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  #mask-w {
+    animation: strokeOffset 1s linear forwards 1s;
+  }
+  #mask-h {
+    animation: strokeOffset 1s linear forwards 2s;
+  }
+  #mask-o {
+    animation: strokeOffset 1s linear forwards 3s;
+  }
+  #mask-c {
+    animation: strokeOffset 1s linear forwards 4s;
+  }
+  #mask-ares {
+    animation: strokeOffset 3s linear forwards 5s;
+  }
