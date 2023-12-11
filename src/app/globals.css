@@ -16,11 +16,20 @@ font-family: var(--font-sansSerif);
 font-size: 24px;
 font-weight: 400;
 margin: 0;
-text-transform: uppercase;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+color:var(--color-selection);
 }
 
 :root{
   --font-sansSerif: texGyreHeros, sans-serif;
   --color-background: #E0E0E0;
   --color-primary:#0F0F0F;
+  --color-selection: #0000EE
 }

@@ -1,9 +1,11 @@
 'use client';
 import { useRef } from 'react';
 import { useEffect, useState } from 'react';
-import WritingAnimation from './components/WritingAnimation';
-import CanvasComponent from './components/CanvasComponent';
-import ClearButton from './components/ClearButton';
+import WritingAnimation from './components/animation/WritingAnimation';
+import CanvasComponent from './components/canvas/CanvasComponent';
+import ClearButton from './components/button/ClearButton';
+import { data } from '../../data';
+import Link from 'next/link';
 import './page.css';
 
 export default function Home() {
@@ -11,6 +13,7 @@ export default function Home() {
   const [showSvg, setShowSVG] = useState(true);
   const [clearCanvas, setClearCanvas] = useState(false);
   const [animationEnd, setAnimationEnd] = useState(false);
+  const [info, setInfo] = useState(data);
 
   useEffect(() => {
     setIsLoading(false);
@@ -54,15 +57,17 @@ export default function Home() {
 
       <section className='case-section'>
         <ul>
-          <li>Case 1</li>
-          <li>Case 2</li>
-          <li>Case 3</li>
+          {info.map((test) => (
+            <Link key={test.id} href={`/${test.id}`}>
+              {<li>{test.case}</li>}
+            </Link>
+          ))}
         </ul>
 
-        <ul>
+        <ul id='social-media'>
+          <li>Mail</li>
           <li>Github</li>
           <li>Instagram</li>
-          <li>Mail</li>
         </ul>
       </section>
       <CanvasComponent

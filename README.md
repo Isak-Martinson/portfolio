@@ -1,3 +1,3 @@
-#Portfolio
+# Portfolio
 
-##Made using next.js and Typescript
+## Made using next.js and Typescript

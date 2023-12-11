@@ -1,7 +1,7 @@
 
 main {
   margin: 0;
-  padding: 24px;
+  padding: 32px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,4 +51,8 @@ hr {
 ul {
   list-style: none;
   z-index: 2;
+}
+
+#social-media {
+  text-align: right;
 }
