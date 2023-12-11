@@ -45,7 +45,7 @@ const WritingAnimation: React.FC<AnimationProps> = ({ onLoad }) => {
   return (
     <div>
       <svg
-        className='who-cares'
+        className='animation'
         width='895'
         height='209'
         viewBox='0 0 895 209'

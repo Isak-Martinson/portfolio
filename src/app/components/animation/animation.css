@@ -1,8 +1,8 @@
-svg {
+.animation {
     width:100%;
 }
 
-.who-cares .mask {
+.animation .mask {
     fill: none;
     stroke: #fff;
     stroke-miterlimit: 10;

@@ -1,7 +1,6 @@
 import { data } from '../../../data';
 import Link from 'next/link';
-import './casePage.css';
-// import styles from './casePage.modules.css'
+import styles from './casePage.module.css';
 
 interface IPageProps {
   params: { id: string };
@@ -11,10 +10,10 @@ const CasePage: React.FC<IPageProps> = ({ params }) => {
   const caseData = data[Number(params.id)];
 
   return caseData ? (
-    <main>
-      <section id='header-section'>
+    <main className={styles.main}>
+      <section id={styles.headerSection}>
         <a href={'/'}>
-          <svg id='arrow' xmlns='http://www.w3.org/2000/svg'>
+          <svg id={styles.arrow} xmlns='http://www.w3.org/2000/svg'>
             <rect x='4' y='8' width='4' height='4' fill='#0F0F0F' />
             <rect y='12' width='4' height='4' fill='#0F0F0F' />
             <rect x='4' y='16' width='4' height='4' fill='#0F0F0F' />
@@ -31,6 +30,7 @@ const CasePage: React.FC<IPageProps> = ({ params }) => {
         </a>
         {caseData.videoUrl !== '' ? (
           <iframe
+            className={styles.iframe}
             src={caseData.videoUrl}
             title='YouTube video player'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -39,10 +39,10 @@ const CasePage: React.FC<IPageProps> = ({ params }) => {
           <img src={caseData.imageUrl} />
         )}
       </section>
-      <section id='case-section'>
-        <h1>{caseData.title}</h1>
+      <section id={styles.caseSection}>
+        <h1 className={styles.title}>{caseData.title}</h1>
         {caseData.body.map((test, index) => (
-          <p className='paragraph' key={index}>
+          <p className={styles.paragraph} key={index}>
             {test}
           </p>
         ))}

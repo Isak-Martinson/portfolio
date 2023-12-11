@@ -18,6 +18,10 @@ font-weight: 400;
 margin: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   color: var(--color-primary);
   text-decoration: none;

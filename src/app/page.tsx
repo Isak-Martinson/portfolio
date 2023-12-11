@@ -6,7 +6,7 @@ import CanvasComponent from './components/canvas/CanvasComponent';
 import ClearButton from './components/button/ClearButton';
 import { data } from '../../data';
 import Link from 'next/link';
-import './page.css';
+import styles from './page.module.css';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,12 +38,12 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <section className='header-section'>
+    <main className={styles.main}>
+      <section className={styles.headerSection}>
         <div>
-          <h1>Isak Martinson</h1>
-          <hr />
-          <p>
+          <h1 className={styles.h1}>Isak Martinson</h1>
+          <hr className={styles.hr} />
+          <p className={styles.p}>
             Developer & <br />
             Digital Designer
           </p>
@@ -55,8 +55,8 @@ export default function Home() {
         <WritingAnimation onLoad={handleAnimationLoaded} />
       ) : null}
 
-      <section className='case-section'>
-        <ul>
+      <section className={styles.caseSection}>
+        <ul className={styles.ul}>
           {info.map((test) => (
             <Link key={test.id} href={`/${test.id}`}>
               {<li>{test.case}</li>}
@@ -64,7 +64,7 @@ export default function Home() {
           ))}
         </ul>
 
-        <ul id='social-media'>
+        <ul id={styles.socialMedia}>
           <li>Mail</li>
           <li>Github</li>
           <li>Instagram</li>
