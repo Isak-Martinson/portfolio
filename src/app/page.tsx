@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import WritingAnimation from './components/animation/WritingAnimation';
 import CanvasComponent from './components/canvas/CanvasComponent';
 import ClearButton from './components/button/ClearButton';
+import ThumbnailComponent from './components/thumbnail/ThumbnailComponent';
 import { data } from '../../data';
 import Link from 'next/link';
 import styles from './page.module.css';
@@ -13,12 +14,17 @@ export default function Home() {
   const [showSvg, setShowSVG] = useState(true);
   const [clearCanvas, setClearCanvas] = useState(false);
   const [animationEnd, setAnimationEnd] = useState(false);
-  const [info, setInfo] = useState(data);
+  const [hover, setHover] = useState(false);
+  const [thumbnail, setThumbnail] = useState('');
 
   useEffect(() => {
     setIsLoading(false);
-    console.log('finnished loading');
+    console.log('finnished loading - useEffect1');
   }, []);
+
+  useEffect(() => {
+    console.log(hover);
+  }, [hover]);
 
   const handleClearCanvas = () => {
     console.log('Clear button clicked');
@@ -35,6 +41,17 @@ export default function Home() {
   const handleAnimationLoaded = () => {
     setAnimationEnd(true);
     console.log('animation has ended');
+  };
+
+  const handleHover = (imageUrl: string) => {
+    console.log('mouse over', imageUrl);
+    setHover(true);
+    setThumbnail(imageUrl);
+  };
+
+  const handleMouseOut = () => {
+    console.log('mouse out');
+    setHover(false);
   };
 
   return (
@@ -55,19 +72,31 @@ export default function Home() {
         <WritingAnimation onLoad={handleAnimationLoaded} />
       ) : null}
 
+      {hover && thumbnail !== '' ? (
+        <ThumbnailComponent image={thumbnail} />
+      ) : null}
+
+      {/* <ThumbnailComponent image={thumbnail} /> */}
+
       <section className={styles.caseSection}>
         <ul className={styles.ul}>
-          {info.map((test) => (
-            <Link key={test.id} href={`/${test.id}`}>
-              {<li>{test.case}</li>}
+          {data.map((info) => (
+            <Link key={info.id} href={`/${info.id}`}>
+              <li
+                onMouseOver={() => handleHover(info.imageUrl)}
+                onMouseOut={() => handleMouseOut()}
+              >
+                {info.case}
+              </li>
             </Link>
           ))}
         </ul>
 
         <ul id={styles.socialMedia}>
-          <li>Mail</li>
+          <a href=''>
+            <li>E-Mail</li>
+          </a>
           <li>Github</li>
-          <li>Instagram</li>
         </ul>
       </section>
       <CanvasComponent

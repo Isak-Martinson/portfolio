@@ -36,7 +36,7 @@ const CasePage: React.FC<IPageProps> = ({ params }) => {
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
           />
         ) : (
-          <img src={caseData.imageUrl} />
+          <img className={styles.image} src={caseData.imageUrl} />
         )}
       </section>
       <section id={styles.caseSection}>

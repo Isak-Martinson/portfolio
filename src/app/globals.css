@@ -8,18 +8,18 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
-
 html body{
 background-color: var(--color-background);
 font-family: var(--font-sansSerif);
 font-size: 24px;
 font-weight: 400;
 margin: 0;
+letter-spacing: -0.02rem;
 }
 
 ul {
   list-style: none;
+  z-index: 2;
 }
 
 a {
@@ -27,8 +27,14 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+li {
+  width: 100%;
+  border-bottom: 0.1em solid transparent;
+}
+
+li:hover {
 color:var(--color-selection);
+border-bottom: 0.1em solid var(--color-selection);
 }
 
 :root{

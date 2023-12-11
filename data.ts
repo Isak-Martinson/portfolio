@@ -14,7 +14,7 @@ export const data: Idata[] = [
     case: 'Case 1',
     title: 'Fabrikörens',
     body: ['test', 'test2', 'test3', 'test4'],
-    imageUrl: '/images/bio.jpeg',
+    imageUrl: '/images/fabrikorens.jpg',
     videoUrl: '',
     url: 'https://fabrikorens.se',
   },
@@ -36,8 +36,7 @@ export const data: Idata[] = [
     case: 'Case 3',
     title: 'Oops...',
     body: ['nothing here yet, work coming soon.'],
-    imageUrl:
-      'https://media.tenor.com/OBEfKgDoCogAAAAC/pulp-fiction-john-travolta.gif',
+    imageUrl: '/images/under-construction.jpg',
     videoUrl: '',
     url: '',
   },

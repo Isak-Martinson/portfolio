@@ -6,9 +6,11 @@ interface ClearButtonProps {
 
 const ClearButton: React.FC<ClearButtonProps> = ({ onClick }) => {
   return (
-    <button id='clearButton' style={{ zIndex: 3 }} onClick={onClick}>
-      Clear Canvas
-    </button>
+    <ul style={{ zIndex: 3 }}>
+      <li id='clearButton' onClick={onClick}>
+        clear canvas
+      </li>
+    </ul>
   );
 };
 
