@@ -22,12 +22,7 @@ export default function Home() {
     console.log('finnished loading - useEffect1');
   }, []);
 
-  useEffect(() => {
-    console.log(hover);
-  }, [hover]);
-
   const handleClearCanvas = () => {
-    console.log('Clear button clicked');
     setClearCanvas(true);
     setShowSVG(false);
   };
@@ -35,22 +30,18 @@ export default function Home() {
   const handleCanvasCleared = () => {
     setClearCanvas(false);
     setShowSVG(false);
-    console.log('canvas cleared in canvas component');
   };
 
   const handleAnimationLoaded = () => {
     setAnimationEnd(true);
-    console.log('animation has ended');
   };
 
   const handleHover = (imageUrl: string) => {
-    console.log('mouse over', imageUrl);
     setHover(true);
     setThumbnail(imageUrl);
   };
 
   const handleMouseOut = () => {
-    console.log('mouse out');
     setHover(false);
   };
 
@@ -75,8 +66,6 @@ export default function Home() {
       {hover && thumbnail !== '' ? (
         <ThumbnailComponent image={thumbnail} />
       ) : null}
-
-      {/* <ThumbnailComponent image={thumbnail} /> */}
 
       <section className={styles.caseSection}>
         <ul className={styles.ul}>

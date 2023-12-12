@@ -41,6 +41,16 @@ const CanvasComponent: React.FC<CanvasComponentProps> = ({
     }
   };
 
+  const handleTouchStart = (e: TouchEvent<HTMLCanvasElement>) => {
+    if (context) {
+      const touchOffsetX = e.touches[0].pageX - e.touches[0].target.offsetLeft;
+      const touchOffsetY = e.touches[0].pageY - e.touches[0].target.offsetTop;
+      context.beginPath();
+      context.moveTo(touchOffsetX, touchOffsetY);
+      setIsDrawing(true);
+    }
+  };
+
   const handleDrawing = (e: MouseEvent) => {
     if (!isDrawing) {
       return;
@@ -57,6 +67,21 @@ const CanvasComponent: React.FC<CanvasComponentProps> = ({
     }
   };
 
+  const handleTouchDrawing = (e: TouchEvent<HTMLCanvasElement>) => {
+    if (!isDrawing) {
+      return;
+    }
+    if (context) {
+      const touchOffsetX = e.touches[0].pageX - e.touches[0].target.offsetLeft;
+      const touchOffsetY = e.touches[0].pageY - e.touches[0].target.offsetTop;
+      context.strokeStyle = '#0000EE';
+      context.lineWidth = 1;
+      context.lineTo(touchOffsetX, touchOffsetY);
+      context.stroke();
+      setCurrentPath([...currentPath, { x: touchOffsetX, y: touchOffsetY }]);
+    }
+  };
+
   const handleEndDrawing = () => {
     setIsDrawing(false);
     context && context.closePath();
@@ -67,6 +92,10 @@ const CanvasComponent: React.FC<CanvasComponentProps> = ({
     <canvas
       ref={canvasRef}
       className='canvas'
+      onTouchStart={(e) => handleTouchStart(e)}
+      onTouchMove={(e) => handleTouchDrawing(e)}
+      onTouchEnd={handleEndDrawing}
+      onTouchCancel={handleEndDrawing}
       onMouseMove={(e) => handleDrawing(e)}
       onMouseDown={(e) => handleStartDrawing(e)}
       onMouseUp={handleEndDrawing}

@@ -11,6 +11,7 @@ const ThumbnailComponent: React.FC<ThumbnailProps> = ({ image }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log('image on thumbnailComponent ', image);
     if (typeof window !== 'undefined') {
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(
@@ -57,10 +58,8 @@ const ThumbnailComponent: React.FC<ThumbnailProps> = ({ image }) => {
       };
 
       run();
-
-      // renderer.render(scene, camera);
     }
-  }, [containerRef]);
+  }, [containerRef, image]);
 
   return (
     <div

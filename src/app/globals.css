@@ -43,3 +43,12 @@ border-bottom: 0.1em solid var(--color-selection);
   --color-primary:#0F0F0F;
   --color-selection: #0000EE
 }
+
+@media (max-width:768px){
+  html body{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: -0.02rem;
+    }
+}
