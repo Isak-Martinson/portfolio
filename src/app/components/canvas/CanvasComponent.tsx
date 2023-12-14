@@ -41,7 +41,7 @@ const CanvasComponent: React.FC<CanvasComponentProps> = ({
     }
   };
 
-  const handleTouchStart = (e: TouchEvent<HTMLCanvasElement>) => {
+  const handleTouchStart = (e: any) => {
     if (context) {
       const touchOffsetX = e.touches[0].pageX - e.touches[0].target.offsetLeft;
       const touchOffsetY = e.touches[0].pageY - e.touches[0].target.offsetTop;
@@ -67,7 +67,7 @@ const CanvasComponent: React.FC<CanvasComponentProps> = ({
     }
   };
 
-  const handleTouchDrawing = (e: TouchEvent<HTMLCanvasElement>) => {
+  const handleTouchDrawing = (e: any) => {
     if (!isDrawing) {
       return;
     }
