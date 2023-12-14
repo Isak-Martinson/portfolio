@@ -14,8 +14,8 @@ export const data: Idata[] = [
     case: 'Case 1',
     title: 'Fabrikörens',
     body: [
-      'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien. fringilla, mattis ligula consectetur, ultrices mauris. Igula consectetur.',
-      'Fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit.',
+      'Throughout my internship at Oh My Interactive, a Stockholm-based agency, I played a key role in developing Fabrikörens company website. My primary focus was on crafting a user-friendly platform that allowed users to effortlessly add their own data.',
+      'Our objective was to integrate functionality with a unique and appealing design. The technological tools employed included Javascript, Vue.js, Tailwind CSS, PHP, and WordPress.',
     ],
     imageUrl: '/images/fabrikorens.jpg',
     videoUrl: '',
@@ -26,8 +26,8 @@ export const data: Idata[] = [
     case: 'Case 2',
     title: 'blodet i oss',
     body: [
-      'Jag jobbar i första hand med Digital Design och Frontend-utveckling. Men Jag har också erfarenhet av rörlig bild. 2019 skapade jag en film för ett offentligt konstverk i Göteborg ’blodet i oss’, skapat av den svenska konstnären Ola Åstrand.',
-      'Jag hade ganska fria händer, men ville fånga känslan av verket i förhållande till gångtunneln. Jag valde även att filma när det var mörkt ute för att ge en så korrekt bild som möjligt över ljuset som konstverket ger ifrån sig. Med snabb klippning, och inslag av rörlighet i bakgrunden speglar filmen att detta är ett offentligt konstverk fritt att betrakta',
+      'While Digital Design and Frontend Development take the lead in my professional focus, I also bring experience in the realm of motion graphics. In 2019, the Swedish artist Ola Åstrand reached out to me, asking me to film his public art installation titled “blodet i oss”.',
+      'My objective was to capture the essence of the artwork, while reflecting its public nature, open for anyone to experience. By shooting while it was dark outside, I aspired to capture the feeling of the red glow emitted by the artwork. Through fast-paced cuts and subtle background movement, I sought to breathe life into the artwork, even in the realm of film.',
     ],
     imageUrl: '/images/bio.jpeg',
     videoUrl:

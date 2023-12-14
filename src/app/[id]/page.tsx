@@ -12,7 +12,7 @@ const CasePage: React.FC<IPageProps> = ({ params }) => {
   return caseData ? (
     <main className={styles.main}>
       <section id={styles.headerSection}>
-        <a href={'/'}>
+        <a className={styles.back} href={'/'}>
           <svg id={styles.arrow} xmlns='http://www.w3.org/2000/svg'>
             <rect x='4' y='8' width='4' height='4' fill='#0F0F0F' />
             <rect y='12' width='4' height='4' fill='#0F0F0F' />
@@ -28,8 +28,11 @@ const CasePage: React.FC<IPageProps> = ({ params }) => {
             <rect x='12' width='4' height='4' fill='#0F0F0F' />
           </svg>
         </a>
+
         {caseData.videoUrl !== '' ? (
           <iframe
+            width='560'
+            height='315'
             className={styles.iframe}
             src={caseData.videoUrl}
             title='YouTube video player'
@@ -48,6 +51,12 @@ const CasePage: React.FC<IPageProps> = ({ params }) => {
         {caseData.body.map((test, index) => (
           <p className={styles.paragraph} key={index}>
             {test}
+            {caseData.url !== '' && index > 0 ? 'Visit live site here: ' : null}
+            {caseData.url !== '' && index > 0 ? (
+              <a className={styles.url} href={caseData.url}>
+                fabrikorens.se
+              </a>
+            ) : null}
           </p>
         ))}
       </section>

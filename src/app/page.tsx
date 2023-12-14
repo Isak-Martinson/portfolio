@@ -82,10 +82,12 @@ export default function Home() {
         </ul>
 
         <ul id={styles.socialMedia}>
-          <a href=''>
+          <a href='mailto: isakmartinson@gmail.com'>
             <li>E-Mail</li>
           </a>
-          <li>Github</li>
+          <a href='https://github.com/Isak-Martinson'>
+            <li>Github</li>
+          </a>
         </ul>
       </section>
       <CanvasComponent

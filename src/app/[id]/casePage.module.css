@@ -10,6 +10,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
+    margin-bottom: 24px;
+  }
+
+  #linkContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
   }
 
   #caseSection {
@@ -36,7 +44,6 @@
 .iframe {
     border: none;
     width: 100%;
-    height: 100%;
 }
 
 .image {
@@ -47,6 +54,22 @@
 #arrow {
     width: 32px;
     height: 28px;
+}
+
+.back {
+    height: fit-content;
+    width: fit-content;
+}
+
+.url {
+    width: fit-content;
+    border-bottom: 0.1em solid var(--color-primary);
+
+}
+
+.url:hover {
+    color: var(--color-selection);
+    border-bottom: 0.1em solid var(--color-selection);
 }
 
 @media (max-width:768px){

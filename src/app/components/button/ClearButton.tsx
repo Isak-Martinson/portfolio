@@ -4,7 +4,7 @@ interface ClearButtonProps {
 
 const ClearButton: React.FC<ClearButtonProps> = ({ onClick }) => {
   return (
-    <ul style={{ zIndex: 3, margin: 0 }}>
+    <ul style={{ zIndex: 3, margin: 0, height: 'fit-content' }}>
       <li id='clearButton' onClick={onClick}>
         clear canvas
       </li>
