@@ -56,3 +56,9 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+@media (max-width:768px){
+.main{
+  height: 90vh;
+}
+}
