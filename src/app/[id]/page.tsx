@@ -54,7 +54,7 @@ const CasePage: React.FC<IPageProps> = ({ params }) => {
             {caseData.url !== '' && index > 0 ? 'Visit live site here: ' : null}
             {caseData.url !== '' && index > 0 ? (
               <a className={styles.url} href={caseData.url}>
-                fabrikorens.se
+                {caseData.url}
               </a>
             ) : null}
           </p>

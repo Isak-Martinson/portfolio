@@ -12,6 +12,18 @@ export const data: Idata[] = [
   {
     id: 0,
     case: 'Case 1',
+    title: 'Frontend Weather App',
+    body: [
+      'I put together this weather app using React/Next.js, TypeScript, and the OpenWeatherMaps free tier API. I wanted to create a user friendly and sleek experience and went for brutalism when sketching out the design in Figma.',
+      'What you get is a weather app that not only nails accurate forecasts but does it with a touch of design innovation.',
+    ],
+    imageUrl: '/images/weather-app.jpg',
+    videoUrl: '',
+    url: 'https://brutalweather.vercel.app',
+  },
+  {
+    id: 1,
+    case: 'Case 2',
     title: 'Fabrikörens',
     body: [
       'Throughout my internship at Oh My Interactive, a Stockholm-based agency, I played a key role in developing Fabrikörens company website. My primary focus was on crafting a user-friendly platform that allowed users to effortlessly add their own data.',
@@ -22,8 +34,8 @@ export const data: Idata[] = [
     url: 'https://fabrikorens.se',
   },
   {
-    id: 1,
-    case: 'Case 2',
+    id: 2,
+    case: 'Case 3',
     title: 'blodet i oss',
     body: [
       'While Digital Design and Frontend Development take the lead in my professional focus, I also bring experience in the realm of motion graphics. In 2019, the Swedish artist Ola Åstrand reached out to me, asking me to film his public art installation titled “blodet i oss”.',
@@ -35,8 +47,8 @@ export const data: Idata[] = [
     url: '',
   },
   {
-    id: 2,
-    case: 'Case 3',
+    id: 3,
+    case: 'Case 4',
     title: 'Oops...',
     body: ['nothing here yet, work coming soon.'],
     imageUrl: '/images/under-construction.jpg',
