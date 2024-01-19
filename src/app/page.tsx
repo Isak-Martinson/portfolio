@@ -70,7 +70,7 @@ export default function Home() {
       <section className={styles.caseSection}>
         <ul className={styles.ul}>
           {data.map((info) => (
-            <Link key={info.id} href={`/${info.id}`}>
+            <Link key={info.id} href={`/case/${info.id}`}>
               <li
                 onMouseOver={() => handleHover(info.imageUrl)}
                 onMouseOut={() => handleMouseOut()}
@@ -82,6 +82,9 @@ export default function Home() {
         </ul>
 
         <ul id={styles.socialMedia}>
+          <Link key={null} href={'/about'}>
+            <li>About</li>
+          </Link>
           <a href='mailto: isakmartinson@gmail.com'>
             <li>E-Mail</li>
           </a>

@@ -1,4 +1,4 @@
-import { data } from '../../../data';
+import { data } from '../../../../data';
 import Link from 'next/link';
 import styles from './casePage.module.css';
 

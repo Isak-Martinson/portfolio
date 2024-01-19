@@ -1,0 +1,26 @@
+.section {
+    margin: 0 32px;
+}
+
+.image {
+    width: 300px;
+    height: auto;
+    margin: 32px 0 24px 0;
+}
+
+.p {
+    margin: 0;
+    width: fit-content;
+}
+
+.download {
+display: block;
+width: fit-content;
+margin-bottom: 24px;
+border-bottom: 1px solid black;
+}
+
+.download:hover {
+    color: #0000EE;
+    border-bottom: 1px solid #0000EE;
+}
